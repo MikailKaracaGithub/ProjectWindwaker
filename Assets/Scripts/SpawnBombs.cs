@@ -57,40 +57,6 @@ public class SpawnBombs : MonoBehaviour
             bombInstance.transform.position = _holdingOffset;
             bombInstance.transform.rotation = transform.rotation;
         }
-
-
-
-
-        //if (Input.GetKeyDown(KeyCode.E) && holding == false)
-        //{
-        //    bombInstance = Instantiate(Bomb, _holdingOffset, Quaternion.identity);
-
-
-        //}
-        //if (Input.GetKey(KeyCode.E))
-        //{
-        //    bombInstance.transform.position = _holdingOffset;
-        //    bombInstance.transform.rotation = transform.rotation;
-        //    bombInstance.GetComponent<SphereCollider>().enabled = false;
-        //    Rigidbody heldRB = bombInstance.GetComponent<Rigidbody>();
-        //    heldRB.useGravity = false;
-        //    heldRB.isKinematic = true;
-        //    holding = true;
-
-        //}
-        //if (holding == true)
-        //{
-        //   if (Input.GetKeyUp(KeyCode.E) && holding == true)
-        //    {
-        //        bombInstance.GetComponent<SphereCollider>().enabled = true;
-        //        Rigidbody heldRB = bombInstance.GetComponent<Rigidbody>();
-        //        heldRB.useGravity = true;
-        //        heldRB.isKinematic = false;
-        //        heldRB.AddForce(transform.forward * 500f);
-
-        //    }
-        //}
-
     }
 }
 

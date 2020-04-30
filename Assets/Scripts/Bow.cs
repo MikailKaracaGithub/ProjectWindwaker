@@ -9,9 +9,10 @@ public class Bow : MonoBehaviour
     private GameObject _bow;
 
     private Animator _animator;
-    public bool _isShooting = false;
 
     public GameObject Arrow;
+
+    private bool _hasBow;
 
     void Start()
     {
@@ -27,36 +28,30 @@ public class Bow : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ShootArrow();
+
+            if (_hasBow == false)
+            {
+                _sword.SetActive(false);
+                _shield.SetActive(false);
+                _bow.SetActive(true);
+                _animator.SetBool("IsShooting", true);
+                _hasBow = true;
+
+            }
+            else
+            {
+                _animator.SetBool("IsReleased", true);
+
+                Instantiate(Arrow, _bow.transform.position, gameObject.transform.rotation);
+
+                ResetShootAnims();
+                _hasBow = false;
+            }
+
         }
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            Shoot();
-        }
-      
-    }
-
-    private void ShootArrow()
-    {
-        _sword.SetActive(false);
-        _shield.SetActive(false);
-        _bow.SetActive(true);
-        _isShooting = true;
-        _animator.SetBool("IsShooting", true);
-
 
     }
-    private void Shoot()
-    {
-        _animator.SetBool("IsReleased", true);
 
-        Instantiate(Arrow, _bow.transform.position, gameObject.transform.rotation);
-        _isShooting = false;
-
-        Invoke("ResetShootAnims", 1.5f);
-
-
-    }
     private void ResetShootAnims()
     {
         _sword.SetActive(true);
@@ -65,4 +60,5 @@ public class Bow : MonoBehaviour
         _animator.SetBool("IsShooting", false);
         _animator.SetBool("IsReleased", false);
     }
+
 }

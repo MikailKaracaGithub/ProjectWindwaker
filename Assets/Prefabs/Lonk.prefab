@@ -900,7 +900,7 @@ GameObject:
   - component: {fileID: 3828434619871516947}
   - component: {fileID: 3828434619871516946}
   m_Layer: 9
-  m_Name: Lonk 1
+  m_Name: Lonk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

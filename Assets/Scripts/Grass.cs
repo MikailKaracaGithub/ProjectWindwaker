@@ -5,14 +5,14 @@ using UnityEngine;
 public class Grass : MonoBehaviour
 {
     public GameObject drop;
-
+    public Transform Spawn;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer.Equals(11))
         {
             
-            Instantiate(drop,transform.position, Quaternion.identity);
+            Instantiate(drop,Spawn.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

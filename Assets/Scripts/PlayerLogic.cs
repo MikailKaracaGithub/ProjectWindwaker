@@ -49,6 +49,8 @@ public class PlayerLogic : MonoBehaviour
 
 
     private bool _hasChicken = false;
+
+    public GameObject Boomerang;
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
@@ -83,6 +85,11 @@ public class PlayerLogic : MonoBehaviour
         else
         {
             _animator.SetBool("IsShielding", false);
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            
+            Instantiate(Boomerang, GameObject.Find("Destination").transform.position, transform.rotation);
         }
 
     }
